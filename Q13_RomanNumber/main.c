@@ -2,32 +2,12 @@
 /*-*- coding:utf-8 -*-*/
 /***************************************************************************************************
 * File: \main.c                                                                                    *
-* Project: Q10_RomanNumber                                                                         *
+* Project: Q13_RomanNumber                                                                         *
 * Created Date: Sunday Sep 25th 2022, 7:36:39 pm                                                   *
 * Author: Wenren Muyan                                                                             *
 * Comments:                                                                                        *
 * --------------------------------------------------------------------------------                 *
-* Last Modified: 25/09/2022 10:06:40                                                               *
-* Modified By: Wenren Muyan                                                                        *
-* --------------------------------------------------------------------------------                 *
-* Copyright (c) 2022 - future Wenren Muyan                                                         *
-* --------------------------------------------------------------------------------                 *
-* HISTORY:                                                                                         *
-* Date				By				Comments                                                       *
-* --------------------------------------------------------------------------------                 *
-***************************************************************************************************/
-
-
-/*-*- gcc 10.3.0 -*-*/
-/*-*- coding:utf-8 -*-*/
-/***************************************************************************************************
-* File: \main.c                                                                                    *
-* Project: Q10_RomanNumber                                                                         *
-* Created Date: Sunday Sep 25th 2022, 7:36:39 pm                                                   *
-* Author: Wenren Muyan                                                                             *
-* Comments:                                                                                        *
-* --------------------------------------------------------------------------------                 *
-* Last Modified: 25/09/2022 10:00:11                                                               *
+* Last Modified: 26/09/2022 06:36:15                                                               *
 * Modified By: Wenren Muyan                                                                        *
 * --------------------------------------------------------------------------------                 *
 * Copyright (c) 2022 - future Wenren Muyan                                                         *
@@ -42,11 +22,7 @@
 
 //#include<string.h>
 
-#define MAX = 15;
-
-enum ROMAN{
-    I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
-}roman;
+#define MAX 15
 
 int romanToInt(char * s){
     char * temp = s;
@@ -90,7 +66,7 @@ int romanToInt(char * s){
 }
 
 int main(){
-    char Rnum[15];                                  // Giving a storage when initialization is essential!!!
+    char Rnum[MAX];                                  // Giving a storage when initialization is essential!!!
     printf("Please enter a roman number: ");
     scanf("%s", Rnum);
     //printf("%s", Rnum);
