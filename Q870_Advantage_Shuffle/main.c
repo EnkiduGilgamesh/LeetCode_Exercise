@@ -7,7 +7,7 @@
 * Author: Wenren Muyan                                                                             *
 * Comments:                                                                                        *
 * --------------------------------------------------------------------------------                 *
-* Last Modified: 8/10/2022 09:40:0                                                                 *
+* Last Modified: 8/10/2022 11:45:20                                                                *
 * Modified By: Wenren Muyan                                                                        *
 * --------------------------------------------------------------------------------                 *
 * Copyright (c) 2022 - future Wenren Muyan                                                         *
@@ -25,23 +25,21 @@ int* advantageCount(int* nums1, int nums1Size, int* nums2, int nums2Size, int* r
     int * res = (int *)malloc(sizeof(int *) * (nums2Size));
 
     for(int i = 0; i < nums2Size; i++){
-        int cur = 0, pos1 = -1, pos2 = -1, small = 0;
+        int cur = -1, pos1 = -1, pos2 = -1, small = -1;
 
         for(int j = 0; j < nums1Size; j++){
-            if(nums1[j] > nums2[i] && cur == 0){
+            if(nums1[j] > nums2[i] && (cur == -1 || nums1[j] < cur)){
                 cur = nums1[j];
                 pos1 = j;
             }
-            if(nums1[j] > nums2[i] && nums1[j] < cur){
-                cur = nums1[j];
-                pos1 = j;
-            }
-            if(nums1[j] < small || small == 0){
+            if(nums1[j] < small || small == -1){
                 small = nums1[j];
                 pos2 = j;
             }
         }
-        if(cur){
+        
+        //Drop out the result
+        if(cur != -1){
             res[i] = cur;
             for(int k = pos1; k < nums1Size - 1; k++){
                 nums1[k] = nums1[k+1];
