@@ -7,7 +7,7 @@
 * Author: Wenren Muyan                                                                             *
 * Comments:                                                                                        *
 * --------------------------------------------------------------------------------                 *
-* Last Modified: 8/10/2022 11:45:20                                                                *
+* Last Modified: 8/10/2022 04:47:44                                                                *
 * Modified By: Wenren Muyan                                                                        *
 * --------------------------------------------------------------------------------                 *
 * Copyright (c) 2022 - future Wenren Muyan                                                         *
@@ -21,12 +21,14 @@
 #include <stdlib.h>
 
 // greedy algorithm. return the smallest number which is bigger than nums2[i], otherwise the smallest in nums1
+// this program is overflow the time limits in LeetCode.
 int* advantageCount(int* nums1, int nums1Size, int* nums2, int nums2Size, int* returnSize){
     int * res = (int *)malloc(sizeof(int *) * (nums2Size));
 
     for(int i = 0; i < nums2Size; i++){
         int cur = -1, pos1 = -1, pos2 = -1, small = -1;
 
+        //record the samllest or the bigger.
         for(int j = 0; j < nums1Size; j++){
             if(nums1[j] > nums2[i] && (cur == -1 || nums1[j] < cur)){
                 cur = nums1[j];
@@ -38,7 +40,7 @@ int* advantageCount(int* nums1, int nums1Size, int* nums2, int nums2Size, int* r
             }
         }
         
-        //Drop out the result
+        //Drop out the result, while assignment
         if(cur != -1){
             res[i] = cur;
             for(int k = pos1; k < nums1Size - 1; k++){
