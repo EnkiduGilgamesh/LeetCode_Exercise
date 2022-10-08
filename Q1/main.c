@@ -7,7 +7,7 @@
 * Author: Wenren Muyan                                                                             *
 * Comments:                                                                                        *
 * --------------------------------------------------------------------------------                 *
-* Last Modified: 29/09/2022 08:29:44                                                               *
+* Last Modified: 8/10/2022 09:00:7                                                                 *
 * Modified By: Wenren Muyan                                                                        *
 * --------------------------------------------------------------------------------                 *
 * Copyright (c) 2022 - future Wenren Muyan                                                         *
@@ -20,5 +20,5 @@
 #include <stdio.h>
 
 int* twoSum(int* nums, int numSize, int target, int* returnSize){
-    
+
 }

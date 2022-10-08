@@ -7,7 +7,7 @@
 * Author: Wenren Muyan                                                                             *
 * Comments:                                                                                        *
 * --------------------------------------------------------------------------------                 *
-* Last Modified: 1/10/2022 09:43:8                                                                 *
+* Last Modified: 8/10/2022 09:00:7                                                                 *
 * Modified By: Wenren Muyan                                                                        *
 * --------------------------------------------------------------------------------                 *
 * Copyright (c) 2022 - future Wenren Muyan                                                         *
@@ -26,10 +26,12 @@ int lengthOfLongestSubstring(char * s){
 
     int res = 0, j = 0;
     for(int i = 0; i < len; i++){
+        // j is left begin position
         int cur = j, flag = 0;
   
         while(cur < i){
             if(s[cur] == s[i]){
+                // begin position change
                 j = cur + 1;
                 flag = 1;
                 break;
@@ -39,6 +41,7 @@ int lengthOfLongestSubstring(char * s){
             }
         }
 
+        // refressh the answer
         if(!flag && res < i - j + 1) res = i - j + 1;
     }
 

@@ -2,12 +2,12 @@
 /*-*- coding:utf-8 -*-*/
 /***************************************************************************************************
 * File: \main.c                                                                                    *
-* Project: Q3_Add_List                                                                             *
+* Project: Q2_Add_List                                                                             *
 * Created Date: Thursday Sep 29th 2022, 8:29:35 am                                                 *
 * Author: Wenren Muyan                                                                             *
 * Comments:                                                                                        *
 * --------------------------------------------------------------------------------                 *
-* Last Modified: 29/09/2022 09:20:1                                                                *
+* Last Modified: 8/10/2022 08:12:46                                                                *
 * Modified By: Wenren Muyan                                                                        *
 * --------------------------------------------------------------------------------                 *
 * Copyright (c) 2022 - future Wenren Muyan                                                         *
@@ -22,7 +22,7 @@
 struct ListNode {
     int val;
     struct ListNode *next;
-}l;
+};
 
 typedef struct ListNode list;
 
